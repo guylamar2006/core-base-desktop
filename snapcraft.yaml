@@ -1,4 +1,4 @@
-name: core24
+name: core24-gdm
 # version: "24"
 adopt-info: bootstrap
 summary: Runtime environment based on Ubuntu 23.10

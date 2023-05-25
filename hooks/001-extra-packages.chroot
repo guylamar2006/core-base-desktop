@@ -104,6 +104,7 @@ PACKAGES=(
     libpam-modules
     libpam-systemd
     libpam-pwquality
+    libspa-0.2-bluetooth
     netcat-openbsd
     netplan.io
     opensc

@@ -48,16 +48,12 @@ apt install --no-install-recommends -y \
 
 # Remove setuid from some executables we're not using
 chmod u-s,g-s /usr/bin/pkexec
-chmod u-s,g-s /usr/libexec/camel-lock-helper-1.2
 
 # Remove Ubuntu X11 session
 rm /usr/share/xsessions/ubuntu.desktop
 
 # Disable systemd support for GNOME Shell
 rm /usr/lib/systemd/user/org.gnome.Shell*
-
-# Move D-Bus policy out of /etc
-mv /etc/dbus-1/system.d/gdm.conf /usr/share/dbus-1/system.d/
 
 # Move display-manager.service symlink out of /etc
 rm /etc/systemd/system/display-manager.service

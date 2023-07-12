@@ -135,3 +135,4 @@ ln -s ../writable/gdm3/custom.conf /etc/gdm3/custom.conf
 
 # Disable gnome-shell systemd
 rm -f /usr/lib/systemd/user/org.gnome.Shell*
+sed -i 's/X-GNOME-HiddenUnderSystemd=true/X-GNOME-HiddenUnderSystemd=false/g' /usr/share/applications/org.gnome.Shell.desktop

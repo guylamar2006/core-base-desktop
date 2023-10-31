@@ -58,6 +58,39 @@ apt install --no-install-recommends -y \
     xdg-user-dirs-gtk \
     inotify-tools
 
+# Install network-manager openvpn
+apt install --no-install-recommends -y \
+    libnma-gtk4-0 \
+    libnm0 \
+    libnma0 \
+    libsecret-1-0 \
+    network-manager-openvpn-gnome \
+    network-manager-openvpn \
+    openvpn
+
+# Remove network-manager files that are provided by the snap
+rm -rf /etc/NetworkManager
+rm -f /usr/bin/nmcli
+rm -f /usr/bin/nmtui
+rm -rf /usr/lib/NetworkManager
+rm -rf /usr/share/bash-completion/completions/nmcli
+rm -rf /usr/share/dbus-1/system-services/org.freedesktop.nm_dispatcher.service
+rm -rf /usr/share/dbus-1/system-services/org.freedesktop.nm_priv_helper.service
+rm -rf /usr/share/dbus-1/system.d/nm-dispatcher.conf
+rm -rf /usr/share/dbus-1/system.d/nm-priv-helper.conf
+rm -rf /usr/share/dbus-1/system.d/org.freedesktop.NetworkManager.conf
+rm -rf /usr/share/man/man*/nm*
+rm -rf /usr/share/man/man*/NetworkManager*
+rm -rf /usr/share/polkit-1/actions/org.freedesktop.NetworkManager.policy
+rm -rf /usr/share/polkit-1/rules.d/org.freedesktop.NetworkManager.rules
+rm -rf /var/lib/NetworkManager
+rm -rf /usr/bin/nmtui-connect
+rm -rf /usr/bin/nmtui-edit
+rm -rf /usr/bin/nmtui-hostname
+rm -rf /usr/share/apport/package-hooks/source_network-manager-applet.py
+rm -rf /usr/share/doc/network-manager/changelog.Debian.gz
+rm -rf /var/log/openvpn
+
 # Remove setuid from some executables we're not using
 chmod u-s,g-s /usr/bin/pkexec
 
